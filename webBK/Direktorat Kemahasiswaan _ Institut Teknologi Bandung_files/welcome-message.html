@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- saved from url=(0317)https://multichannel.qiscus.com/iframes/xheop-u1kttqcvsim2wtl/welcome-message?avatar_url=https://d1edrlpyc25xu0.cloudfront.net/kiwari-prod/image/upload/Ri-pxHv6e1/default_avatar.png&cs_name=Layanan%20Terpadu&welcome_text=Selamat%20datang%20di%20Direktorat%20Kemahasiswaan%20ITB,%20ada%20yang%20bisa%20kami%20bantu%20? -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Qiscus Omnichannel Chat Welcome Message</title>
+    <style>
+        *,*:before,*:after {
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+        }
+        .qcw-cs-welcome { color: #444; }
+        .qcw-cs-welcome .qcw-header .qcw-header-avatar img { width: 48px; height: 48px; }
+        html, body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            font-family: sans-serif;
+            padding: 15px;
+            overflow: hidden;
+        }
+        body { display: flex; justify-content: center; align-items: flex-end; }
+        .qcw-cs-welcome .qcw-header {
+            display: flex;
+            flex-direction: column;
+            padding: 32px;
+            margin: -32px -32px 32px -32px;
+            border-radius: 8px 8px 0 0;
+        }
+        .qcw-cs-welcome .qcw-header-avatar {
+            position: absolute;
+            top: -30px;
+            border-radius: 50%;
+            width: 54px;
+            height: 54px;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+        }
+        .qcw-header {
+            background: #74c162;
+        }
+        .qcw-cs-welcome .qcw-header-avatar img {
+            width: 54px;
+            height: 54px;
+        }
+        .qcw-cs-welcome {
+            width: 100%;
+            background: #FFF;
+            border-radius: 8px;
+            box-shadow: 0px 8px 24px rgba(51, 51, 51, 0.1);
+            text-align: center;
+            padding: 32px;
+            position: relative;
+        }
+        .qcw-cs-welcome .qcw-user-display-name {
+            font-size: 18px;
+            font-weight: 600;
+            width: 100%;
+        }
+        .qcw-cs-welcome .qcw-user-status {
+            font-size: 12px;
+        }
+        /* .qcw-cs-welcome { */
+        .qcw-welcome-text {
+            font-size : 14px;
+            background: #FFF;
+        }
+        span.qcw-cs-close-welcome {
+            cursor: pointer;
+            position: absolute;
+            top: -12px;
+            right: -10px;
+        }
+        /*  */
+    </style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1134.0" data-gr-ext-installed="">
+    <div id="welcome-message" class="qcw-cs-welcome"><div class="qcw-header"><div class="qcw-header-avatar"><img src="./default_avatar.png" alt="avatar"></div> <div class="qcw-user-display-name">Layanan Terpadu</div> <span class="qcw-cs-close-welcome"><img src="./close-circle.svg" alt="close-circle"></span></div> <div class="qcw-welcome-text">
+            Selamat datang di Direktorat Kemahasiswaan ITB, ada yang bisa kami bantu ?
+        </div></div>
+    <script>
+        function bindEvent(element, eventName, eventHandler) {
+            if (element.addEventListener){
+                element.addEventListener(eventName, eventHandler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent('on' + eventName, eventHandler);
+            }
+        }
+        function createNode(el, content, attr) {
+            var node = document.createElement(el);
+            if(content) node.appendChild(document.createTextNode(content));
+            if(attr) {
+                var nodeAttr = '';
+                Object.keys(attr).forEach(function(a) {
+                    nodeAttr = document.createAttribute(a);
+                    nodeAttr.value = attr[a];
+                    node.setAttributeNode(nodeAttr);
+                })
+            }
+            return node;
+        }
+    </script>
+    <script src="./vue.min.js"></script>
+    <script src="./purify.min.js"></script>
+    <script>
+        new Vue({
+            el: '#welcome-message',
+            data: () => ({
+                originalText: 'Selamat datang di Direktorat Kemahasiswaan ITB, ada yang bisa kami bantu ?'.replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
+                sanitizedText: '',
+            }),
+            methods: {
+                sendMessage(msg) {
+                    // Make sure you are sending a string, and to stringify JSON
+                    window.parent.postMessage(msg, '*');
+                },
+                closeWelcomeMessage() {
+                    this.sendMessage({
+                        event_name: 'close-welcome-message',
+                    })
+                },
+                changeHeight() {
+                    this.sendMessage({
+                        event_name: 'iframe-height-change',
+                        height: document.getElementById('welcome-message').clientHeight+75,
+                    })
+                }
+            },
+            mounted() {
+                bindEvent(window, 'message', (e) => {
+                    if(!e.data) return;
+                    if(e.data.event_name == 'custom-css') {
+                        !document.querySelector('#qismo-custom-css') && document.head.appendChild(createNode('style', e.data.css, {id: 'qismo-custom-css'}));
+                    }
+                    if(e.data.event_name == 'change-height') {
+                        window.setTimeout(() => this.changeHeight(), 2000);
+                    }
+                });
+                this.sanitizedText = DOMPurify.sanitize(this.originalText);
+            },
+        });
+    </script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

@@ -1,0 +1,114 @@
+body{
+              background-repeat: no-repeat;
+              background-size: cover;
+          }
+          .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+            color: #fff;
+            outline: 0;
+          }
+          p {
+            margin-bottom: 2rem;
+            font-family: 'Roboto', sans-serif;
+          } 
+          [data-theme="dark"] body { 
+            background-image: url('media/background-b.png'); 
+          }
+          .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+            color: #fff;
+            outline: 0;
+          }
+          p {
+            margin-bottom: 2rem;
+          }
+          .tesimage {
+            background-image: url('background-b.png');
+            background-repeat: no-repeat;
+            background-position: left bottom;
+          }
+          .flex-root {
+            background-repeat: no-repeat; 
+            background-size: cover !important;
+          }
+
+          /* Extra small devices (phones, 600px and down) */
+          @media only screen and (max-width: 600px) {
+            .first {
+              order: 1;
+            }
+            .panduan {
+              color: #fff;padding: 0 1rem;
+            }
+            .pt-15 {
+              padding-top: 2rem !important;
+            }
+            .mt {
+              margin-top: 20px;
+              margin-bottom: 10px !important;
+            }
+          }
+
+          /* Small devices (portrait tablets and large phones, 600px and up) */
+          @media only screen and (min-width: 600px) {
+            .first {
+              order: 1;
+            }
+            .panduan {
+              color: #fff;padding: 0 1rem;
+            }
+            .pt-15 {
+              padding-top: 2rem !important;
+            }
+            .mt {
+              margin-top: 20px;
+              margin-bottom: 10px !important;
+            }
+          }
+
+          /* Medium devices (landscape tablets, 768px and up) */
+          @media only screen and (min-width: 768px) {
+            .first {
+              order: 1;
+            }     
+          }
+
+          /* Large devices (laptops/desktops, 992px and up) */
+          @media only screen and (min-width: 992px) {
+            .first {
+              order: 0;                
+            }           
+            .panduan {
+              width: 100%;
+              float: right;
+              text-align: left;
+            }
+            .mt {
+              margin-top: 50px;
+              margin-bottom: 2rem;
+            }
+          }
+          @media only screen and (min-width: 1200px) {
+            .first {
+              order: 0;                
+            }           
+            .panduan {
+              width: 60%;
+              float: right;
+              text-align: left;
+            }
+            .mt {
+              margin-top: 50px;
+              margin-bottom: 2rem;
+            }
+          }
+
+.alert h2, #fm1 h3{
+	color : #000;
+}
+.card .card-header {
+    display: block;
+padding: 0rem 0rem;
+
+}
+.card .card-body {
+    padding: 0rem 0rem;
+}
